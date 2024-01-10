@@ -1,0 +1,61 @@
+{
+  "name": "eva",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/eva/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/eva",
+        "main": "apps/eva/src/main.ts",
+        "tsConfig": "apps/eva/tsconfig.app.json",
+        "assets": [
+          "apps/eva/src/assets"
+        ],
+        "webpackConfig": "apps/eva/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "eva:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "eva:build:development"
+        },
+        "production": {
+          "buildTarget": "eva:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/eva/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
