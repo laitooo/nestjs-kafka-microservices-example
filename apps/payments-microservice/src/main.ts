@@ -18,13 +18,12 @@ async function bootstrap() {
           brokers: ['127.0.0.1:9092', 'kafka0:9092', 'localhost:9092', 'kafka1:9092', 'kafka:9092'],
         },
         consumer: {
-          groupId: 'auth-consumer',
+          groupId: 'payment-consumer',
         },
-        producerOnlyMode: true,
-      }
+      },
     }
-  )
-
+  );
+  
   await app.listen();
 }
 

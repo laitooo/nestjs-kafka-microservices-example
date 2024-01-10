@@ -8,6 +8,7 @@ export class AuthController {
 
     @Post('sign-up')
     createUser(@Body(ValidationPipe) dto: CreateUserDto) {
+        console.log('sign up');
         return this.authService.createUser(dto);
     }
 }

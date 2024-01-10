@@ -1,0 +1,20 @@
+
+> nx run auth-microservice:serve:development serve eva
+
+
+ >  NX   Schema does not support positional arguments. Argument 'serve,eva' found
+
+
+
+ 
+
+ >  NX   Running target serve for project auth-microservice failed
+
+   Failed tasks:
+   
+   - auth-microservice:serve:development
+   
+   Hint: run the command with --verbose for more details.
+
+   View structured, searchable error logs at https://nx.app/runs/RdICfRcImr
+

@@ -9,6 +9,6 @@ export class AuthService {
     ) {}
 
     createUser(dto: CreateUserDto) {
-        this.authClient.emit('create-user', JSON.stringify(dto));
+        this.authClient.emit('create_user', JSON.stringify(dto));
     }
 }
